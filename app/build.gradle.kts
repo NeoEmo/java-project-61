@@ -19,35 +19,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
-
-
 application {
     mainClass = "hexlet.code.App"
-    applicationDefaultJvmArgs = listOf("-Dgreeting.language=en")
-    executableDir = "custom_bin_dir"
-    mainModule = "org.gradle.sample.app" // name defined in module-info.java
-    mainClass = "hexlet.code.App"
 }
 
-
-val createDocs by tasks.registering {
-    val docs = layout.buildDirectory.dir("docs")
-    outputs.dir(docs)
-    doLast {
-        docs.get().asFile.mkdirs()
-        docs.get().file("readme.txt").asFile.writeText("Read me!")
-    }
-}
-
-distributions {
-    main {
-        contents {
-            from(createDocs) {
-                into("docs")
-            }
-        }
-    }
-}
 
 
 
