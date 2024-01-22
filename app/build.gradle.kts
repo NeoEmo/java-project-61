@@ -23,7 +23,18 @@ application {
     mainClass = "hexlet.code.App"
 }
 
+/*
+Аналог для build.gradle.kts
+compileJava {
+  options.release = 20
+}
+ */
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
 
 
 
