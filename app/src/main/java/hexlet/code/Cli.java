@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.App;
-
 import java.util.Scanner;
 
 class Cli {
