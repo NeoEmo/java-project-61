@@ -26,7 +26,7 @@ application {
 /*
 Аналог для build.gradle.kts
 compileJava {
-  options.release = 20
+  options.release = 21
 }
  */
 
