@@ -11,6 +11,5 @@ class Cli {
         // Здесь мог быть цикл if, который проверял бы наличие имени в словаре имён, но его нет.
         userName = name.nextLine();
         System.out.println("Hello, " + userName + "!");
-        name.close();
     }
 }

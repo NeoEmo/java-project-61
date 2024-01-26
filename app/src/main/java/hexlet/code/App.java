@@ -17,11 +17,9 @@ public class App {
         System.out.println(gameNum);
         if (gameNum == 1) {
             App.getGreet();
-            gameNumber.close();
         } else if (gameNum == 2) {
             App.getGreet();
             EvenGame.game();
-            gameNumber.close();
         }
     }
 
