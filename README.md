@@ -11,4 +11,4 @@
 </a>
 
 ### Demo
-<script async id="ogcAKgfuQzel1k94CeeLypTG8" src="https://asciinema.org/a/ogcAKgfuQzel1k94CeeLypTG8.js"></script>
+https://asciinema.org/a/ogcAKgfuQzel1k94CeeLypTG8
