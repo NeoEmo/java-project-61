@@ -11,8 +11,8 @@ public class Calc {
             //Создание рандомных значений до 20-ти и рандомного оператора
             int firstNumber = (int) (Math.random() * 20);
             int secondNumber = (int) (Math.random() * 20);
-            char[] operations = {'+' , '-' , '*'};
-            int randomOperator = (int)(Math.random() * 3);
+            char[] operations = {'+', '-', '*'};
+            int randomOperator = (int) (Math.random() * 3);
             int result;
 
             //Логика определения результата
@@ -37,7 +37,8 @@ public class Calc {
                 }
             } else {
                 index = 3;
-                System.out.println("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was " + "'" + result + "'");
+                System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
+                System.out.println("'" + result + "'");
                 System.out.println("Let's try again, " + userName + "!");
             }
 

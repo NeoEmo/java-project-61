@@ -6,7 +6,6 @@ import java.util.Scanner;
 class Cli {
     static String userName;
 
-    
     public static void getByName() {
         Scanner name = new Scanner(System.in);
         System.out.print("May I have your name ");

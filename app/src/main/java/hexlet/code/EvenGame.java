@@ -9,7 +9,7 @@ public class EvenGame {
     public static void game() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int index = 0;
-        while(index < 3) {
+        while (index < 3) {
             int randomNumber = (int) (Math.random() * 100);
             System.out.println("Question: " + randomNumber);
             Scanner correctQuestion = new Scanner(System.in);
