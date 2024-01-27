@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 class Cli {
-    public static String userName;
+    static String userName;
 
     
     public static void getByName() {
