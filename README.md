@@ -9,3 +9,6 @@
 <a href="https://codeclimate.com/github/NeoEmo/java-project-61/test_coverage">
 	<img src="https://api.codeclimate.com/v1/badges/ae8adbf03621310642d3/test_coverage" />
 </a>
+
+### Demo
+<script async id="ogcAKgfuQzel1k94CeeLypTG8" src="https://asciinema.org/a/ogcAKgfuQzel1k94CeeLypTG8.js"></script>
