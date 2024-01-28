@@ -1,8 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 import java.util.Scanner;
-
-import static hexlet.code.Cli.userName;
 
 
 public class EvenGame {
@@ -13,18 +13,22 @@ public class EvenGame {
             int randomNumber = (int) (Math.random() * 100);
             System.out.println("Question: " + randomNumber);
             Scanner correctQuestion = new Scanner(System.in);
-            System.out.print("You answer: ");
+            System.out.print(Engine.getAnswerTxt());
             String yesOrNo = correctQuestion.nextLine();
             if ((yesOrNo.equals("yes") && randomNumber % 2 == 0) || (yesOrNo.equals("no") && randomNumber % 2 == 1)) {
                 index++;
-                System.out.println("Correct!");
+                System.out.println(Engine.getCorrectTxt());
                 if (index == 3) {
-                    System.out.println("Congratulations," + userName + "!");
+                    System.out.println(Engine.getGoodEnding());
                 }
             } else {
                 index = 3;
-                // ОНО РАБОТАЕТ!!! ОНО РАБОТАЕТ!!!
-                System.out.println("Let's try again, " + userName + "!");
+                if (yesOrNo.equals("yes") && randomNumber % 2 == 1) {
+                    System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+                } else {
+                    System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+                }
+                System.out.println(Engine.getBadEnding());
             }
         }
     }

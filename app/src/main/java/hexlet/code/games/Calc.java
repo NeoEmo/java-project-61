@@ -1,7 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 import java.util.Scanner;
-import static hexlet.code.Cli.userName;
 
 public class Calc {
     public static void game() {
@@ -27,26 +28,20 @@ public class Calc {
             //Сама программа
             System.out.println("Question: " + firstNumber + operations[randomOperator] + secondNumber);
             Scanner correctQuestion = new Scanner(System.in);
-            System.out.print("You answer: ");
+            System.out.print(Engine.getAnswerTxt());
             int answerTheQuestion = correctQuestion.nextInt();
             if (answerTheQuestion == result) {
-                System.out.println("Correct!");
+                System.out.println(Engine.getCorrectTxt());
                 index++;
                 if (index == 3) {
-                    System.out.println("Congratulations, " + userName + "!");
+                    System.out.println(Engine.getGoodEnding());
                 }
             } else {
                 index = 3;
                 System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
                 System.out.println("'" + result + "'");
-                System.out.println("Let's try again, " + userName + "!");
+                System.out.println(Engine.getBadEnding());
             }
-
-        /*Интерфейс?
-        Scanner correctQuestion = new Scanner(System.in);
-        System.out.print("You answer: ");
-        String answerTheQuestion = correctQuestion.nextLine();
-        index++;*/
         }
     }
 }
