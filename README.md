@@ -10,5 +10,8 @@
 	<img src="https://api.codeclimate.com/v1/badges/ae8adbf03621310642d3/test_coverage" />
 </a>
 
-### Demo
-https://asciinema.org/a/ogcAKgfuQzel1k94CeeLypTG8
+### Demo Even
+![](https://github.com/NeoEmo/java-project-61/blob/main/GIF%60s/Even.gif)
+
+### Demo Calc
+![](https://github.com/NeoEmo/java-project-61/blob/main/GIF%60s/calc.gif)
