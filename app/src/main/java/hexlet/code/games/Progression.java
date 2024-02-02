@@ -14,7 +14,7 @@ public class Progression {
             int result = 0;
             int tempNumber = firstNumber;
             String missingProgression = " ..";
-            int randomLengthProgression = 5 + ((int) (Math.random() * 5));
+            int randomLengthProgression = 3 + ((int) (Math.random() * 5));
             int difference = 1 + ((int) (Math.random() * 10));
             int randomMissingNumber = 2 + ((int) (Math.random() * 5));
             int afterMissingNumber = randomLengthProgression - randomMissingNumber;
