@@ -15,3 +15,12 @@
 
 ### Demo Calc
 ![](https://github.com/NeoEmo/java-project-61/blob/main/GIF%60s/calc.gif)
+
+### Demo GCD
+![](https://github.com/NeoEmo/java-project-61/blob/main/GIF%60s/GCD.gif)
+
+### Demo Progression
+![](https://github.com/NeoEmo/java-project-61/blob/main/GIF%60s/Progression.gif)
+
+### Demo Prime
+![](https://github.com/NeoEmo/java-project-61/blob/main/GIF%60s/Prime.gif)
