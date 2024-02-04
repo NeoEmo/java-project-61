@@ -34,8 +34,6 @@ compileJava {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
-        vendor = JvmVendorSpec.ORACLE
-        implementation = JvmImplementation.J9
     }
 
 }
