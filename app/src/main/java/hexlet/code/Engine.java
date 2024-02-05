@@ -37,5 +37,5 @@ public class Engine {
     public static String getBadEnding() {
         return badEnding();
     }
-    public static int getEndIndex() {return  endIndex();}
+    public static int getEndIndex() { return  endIndex(); }
 }
