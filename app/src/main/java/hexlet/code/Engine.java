@@ -19,7 +19,11 @@ public class Engine {
         return "Let's try again, " + userName + "!";
     }
 
-    static int endIndex() { return 3;}
+    static int endIndex() {
+        final int index;
+        index = 3;
+        return index;
+    }
 
     //Геттеры
     public static String getCorrectTxt() {
