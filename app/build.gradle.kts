@@ -23,20 +23,6 @@ application {
     mainClass = "hexlet.code.App"
 }
 
-/*
-Аналог для build.gradle.kts
-compileJava {
-  options.release = 21
-}
- */
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-
-}
-
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
