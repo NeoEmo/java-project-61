@@ -8,15 +8,16 @@ public class Progression {
     public static void game() {
         //Значения
         int index = 0;
-        while (index < 3) {
+        final int endIndex = 3;
+        while (index < endIndex) {
             int firstNumber = (int) (Math.random() * 10);
             String progression = String.valueOf(firstNumber);
             int result = 0;
             int tempNumber = firstNumber;
             String missingProgression = " ..";
-            int randomLengthProgression = 3 + ((int) (Math.random() * 5));
-            int difference = 1 + ((int) (Math.random() * 10));
-            int randomMissingNumber = 2 + ((int) (Math.random() * 5));
+            final int randomLengthProgression = 3 + ((int) (Math.random() * 5));
+            final int difference = 1 + ((int) (Math.random() * 10));
+            final int randomMissingNumber = 2 + ((int) (Math.random() * 5));
             int afterMissingNumber = randomLengthProgression - randomMissingNumber;
 
             //Прогрессия
@@ -45,11 +46,11 @@ public class Progression {
             if (answerTheQuestion == result) {
                 System.out.println(Engine.getCorrectTxt());
                 index++;
-                if (index == 3) {
+                if (index == endIndex) {
                     System.out.println(Engine.getGoodEnding());
                 }
             } else {
-                index = 3;
+                index = endIndex;
                 System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
                 System.out.println("'" + result + "'");
                 System.out.println(Engine.getBadEnding());
