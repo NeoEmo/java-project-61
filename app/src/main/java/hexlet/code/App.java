@@ -21,25 +21,31 @@ public class App {
         System.out.println("0 - Exit");
         Scanner gameNumber = new Scanner(System.in);
         int gameNum;
+        int greet = 1;
+        int even = 2;
+        int calc = 3;
+        int gcd = 4;
+        int progression = 5;
+        int prime = 6;
         System.out.print("Your choice: ");
         gameNum = gameNumber.nextInt();
         System.out.println(gameNum);
         // в конце надо поменять на switch case для удобства
-        if (gameNum == 1) {
+        if (gameNum == greet) {
             App.getGreet();
-        } else if (gameNum == 2) {
+        } else if (gameNum == even) {
             App.getGreet();
             EvenGame.game();
-        } else if (gameNum == 3) {
+        } else if (gameNum == calc) {
             App.getGreet();
             Calc.game();
-        } else if (gameNum == 4) {
+        } else if (gameNum == gcd) {
             App.getGreet();
             GCD.game();
-        } else if (gameNum == 5) {
+        } else if (gameNum == progression) {
             App.getGreet();
             Progression.game();
-        } else if (gameNum == 6) {
+        } else if (gameNum == prime) {
             App.getGreet();
             Prime.game();
         }
