@@ -9,8 +9,9 @@ public class GCD {
         //Значения
         int index = 0;
         while (index < Engine.getEndIndex()) {
-            int firstNumber = (int) (Math.random() * 100);
-            int secondNumber = (int) (Math.random() * 100);
+            final int firstNumber = (int) (Math.random() * 100);
+            final int secondNumber = (int) (Math.random() * 100);
+            final int divider = 50;
             int result = 1;
             int tmpResult;
             final int[] simpleNumber = {
@@ -58,7 +59,7 @@ public class GCD {
 
             //Логика шанса, что у числа есть популярный делитель (2 = 50%, 3 = 33% 4 = 25% итд до 50, т.к. 51 = 1%)
             var i = 2;
-            while (i < 50) {
+            while (i < divider) {
                 if (firstNumber % i == 0 && secondNumber % i == 0) {
                     tmpResult = i;
                     if (tmpResult > result) {

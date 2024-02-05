@@ -10,10 +10,10 @@ public class Calc {
         int index = 0;
         while (index < Engine.getEndIndex()) {
             //Создание рандомных значений до 20-ти и рандомного оператора
-            int firstNumber = (int) (Math.random() * 20);
-            int secondNumber = (int) (Math.random() * 20);
+            final int firstNumber = (int) (Math.random() * 20);
+            final int secondNumber = (int) (Math.random() * 20);
             char[] operations = {'+', '-', '*'};
-            int randomOperator = (int) (Math.random() * 3);
+            final int randomOperator = (int) (Math.random() * 3);
             int result;
 
             //Логика определения результата

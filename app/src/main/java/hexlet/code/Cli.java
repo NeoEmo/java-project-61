@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 class Cli {
-    static String userName;
+    private static String userName;
 
     public static void getByName() {
         Scanner name = new Scanner(System.in);
@@ -12,5 +12,10 @@ class Cli {
         // Здесь мог быть цикл if, который проверял бы наличие имени в словаре имён, но его нет.
         userName = name.nextLine();
         System.out.println("Hello, " + userName + "!");
+    }
+
+    //Геттеры
+    public static String getUserName() {
+        return userName;
     }
 }

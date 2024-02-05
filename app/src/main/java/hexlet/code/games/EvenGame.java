@@ -10,7 +10,7 @@ public class EvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int index = 0;
         while (index < Engine.getEndIndex()) {
-            int randomNumber = (int) (Math.random() * 100);
+            final int randomNumber = (int) (Math.random() * 100);
             System.out.println("Question: " + randomNumber);
             Scanner correctQuestion = new Scanner(System.in);
             System.out.print(Engine.getAnswerTxt());

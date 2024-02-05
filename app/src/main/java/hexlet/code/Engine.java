@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import static hexlet.code.Cli.userName;
+import static hexlet.code.Cli.getUserName;
 
 public class Engine {
     static String correctTxt() {
@@ -8,7 +8,7 @@ public class Engine {
     }
 
     static String goodEnding() {
-        return "Congratulations, " + userName + "!";
+        return "Congratulations, " + getUserName() + "!";
     }
 
     static String answerTxt() {
@@ -16,7 +16,7 @@ public class Engine {
     }
 
     static String badEnding() {
-        return "Let's try again, " + userName + "!";
+        return "Let's try again, " + getUserName() + "!";
     }
 
     static int endIndex() {
