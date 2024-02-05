@@ -19,6 +19,8 @@ public class Engine {
         return "Let's try again, " + userName + "!";
     }
 
+    static int endIndex() { return 3;}
+
     //Геттеры
     public static String getCorrectTxt() {
         return correctTxt();
@@ -32,4 +34,5 @@ public class Engine {
     public static String getBadEnding() {
         return badEnding();
     }
+    public static int getEndIndex() {return  endIndex();}
 }

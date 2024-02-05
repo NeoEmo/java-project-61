@@ -8,9 +8,8 @@ public class Progression {
     public static void game() {
         //Значения
         int index = 0;
-        final int endIndex = 3;
-        while (index < endIndex) {
-            int firstNumber = (int) (Math.random() * 10);
+        while (index < Engine.getEndIndex()) {
+            final int firstNumber = (int) (Math.random() * 10);
             String progression = String.valueOf(firstNumber);
             int result = 0;
             int tempNumber = firstNumber;
@@ -46,11 +45,11 @@ public class Progression {
             if (answerTheQuestion == result) {
                 System.out.println(Engine.getCorrectTxt());
                 index++;
-                if (index == endIndex) {
+                if (index == Engine.getEndIndex()) {
                     System.out.println(Engine.getGoodEnding());
                 }
             } else {
-                index = endIndex;
+                index = Engine.getEndIndex();
                 System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
                 System.out.println("'" + result + "'");
                 System.out.println(Engine.getBadEnding());

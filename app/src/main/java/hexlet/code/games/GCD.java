@@ -8,7 +8,7 @@ public class GCD {
     public static void game() {
         //Значения
         int index = 0;
-        while (index < 3) {
+        while (index < Engine.getEndIndex()) {
             int firstNumber = (int) (Math.random() * 100);
             int secondNumber = (int) (Math.random() * 100);
             int result = 1;
@@ -78,11 +78,11 @@ public class GCD {
             if (answerTheQuestion == result) {
                 System.out.println(Engine.getCorrectTxt());
                 index++;
-                if (index == 3) {
+                if (index == Engine.getEndIndex()) {
                     System.out.println(Engine.getGoodEnding());
                 }
             } else {
-                index = 3;
+                index = Engine.getEndIndex();
                 System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
                 System.out.println("'" + result + "'");
                 System.out.println(Engine.getBadEnding());
