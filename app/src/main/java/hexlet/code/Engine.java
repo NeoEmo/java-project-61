@@ -20,8 +20,7 @@ public class Engine {
     }
 
     static int endIndex() {
-        final int index;
-        index = 3;
+        final int index = 3;
         return index;
     }
 
