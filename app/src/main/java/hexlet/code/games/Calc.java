@@ -26,7 +26,7 @@ public class Calc {
             }
 
             //Сама программа
-            System.out.println("Question: " + firstNumber + operations[randomOperator] + secondNumber);
+            System.out.println("Question: " + firstNumber + " " + operations[randomOperator] + " " + secondNumber);
             Scanner correctQuestion = new Scanner(System.in);
             System.out.print(Engine.getAnswerTxt());
             int answerTheQuestion = correctQuestion.nextInt();
