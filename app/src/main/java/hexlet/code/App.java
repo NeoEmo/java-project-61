@@ -20,32 +20,32 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         Scanner gameNumber = new Scanner(System.in);
-        int gameNum;
-        int greet = 1;
-        int even = 2;
-        int calc = 3;
-        int gcd = 4;
-        int progression = 5;
-        int prime = 6;
+        String gameNum;
+        String greet = "1";
+        String even = "2";
+        String calc = "3";
+        String gcd = "4";
+        String progression = "5";
+        String prime = "6";
         System.out.print("Your choice: ");
-        gameNum = gameNumber.nextInt();
+        gameNum = gameNumber.nextLine();
         System.out.println(gameNum);
         // в конце надо поменять на switch case для удобства
-        if (gameNum == greet) {
+        if (gameNum.equals(greet)) {
             App.getGreet();
-        } else if (gameNum == even) {
+        } else if (gameNum.equals(even)) {
             App.getGreet();
             EvenGame.game();
-        } else if (gameNum == calc) {
+        } else if (gameNum.equals(calc)) {
             App.getGreet();
             Calc.game();
-        } else if (gameNum == gcd) {
+        } else if (gameNum.equals(gcd)) {
             App.getGreet();
             GCD.game();
-        } else if (gameNum == progression) {
+        } else if (gameNum.equals(progression)) {
             App.getGreet();
             Progression.game();
-        } else if (gameNum == prime) {
+        } else if (gameNum.equals(prime)) {
             App.getGreet();
             Prime.game();
         }
