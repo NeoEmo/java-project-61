@@ -21,33 +21,37 @@ public class App {
         System.out.println("0 - Exit");
         Scanner gameNumber = new Scanner(System.in);
         String gameNum;
-        String greet = "1";
-        String even = "2";
-        String calc = "3";
-        String gcd = "4";
-        String progression = "5";
-        String prime = "6";
         System.out.print("Your choice: ");
         gameNum = gameNumber.nextLine();
         System.out.println(gameNum);
         // в конце надо поменять на switch case для удобства
-        if (gameNum.equals(greet)) {
-            App.getGreet();
-        } else if (gameNum.equals(even)) {
-            App.getGreet();
-            EvenGame.game();
-        } else if (gameNum.equals(calc)) {
-            App.getGreet();
-            Calc.game();
-        } else if (gameNum.equals(gcd)) {
-            App.getGreet();
-            GCD.game();
-        } else if (gameNum.equals(progression)) {
-            App.getGreet();
-            Progression.game();
-        } else if (gameNum.equals(prime)) {
-            App.getGreet();
-            Prime.game();
+        switch (gameNum) {
+            case "1":
+                getGreet();
+                break;
+            case "2":
+                getGreet();
+                EvenGame.game();
+                break;
+            case "3":
+                getGreet();
+                Calc.game();
+                break;
+            case "4":
+                getGreet();
+                GCD.game();
+                break;
+            case "5":
+                getGreet();
+                Progression.game();
+                break;
+            case "6":
+                getGreet();
+                Prime.game();
+                break;
+            default:
+                // Handle the case where the input is not recognized
+                break;
         }
     }
 

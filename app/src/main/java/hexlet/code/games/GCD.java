@@ -19,8 +19,11 @@ public class GCD {
             };
 
 
-            //Логика определения результата
-            //Логика простых чисел
+            /* Логика определения результата
+            Есть ещё вариант делать через "Алгоритм Евклида", но:
+            1)Я мало знаком с ним
+            2)Видел что на больших числах он становится неточным
+            Логика простых чисел */
             for (var i = 0; i < simpleNumber.length; i++) {
                 if (firstNumber == simpleNumber[i] && secondNumber % simpleNumber[i] == 0) {
                     tmpResult = simpleNumber[i];
