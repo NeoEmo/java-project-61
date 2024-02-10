@@ -27,36 +27,31 @@ public class App {
         // в конце надо поменять на switch case для удобства
         switch (gameNum) {
             case "1":
-                getGreet();
+                Cli.getByName();
                 break;
             case "2":
-                getGreet();
+                Cli.getByName();
                 EvenGame.game();
                 break;
             case "3":
-                getGreet();
+                Cli.getByName();
                 Calc.game();
                 break;
             case "4":
-                getGreet();
+                Cli.getByName();
                 GCD.game();
                 break;
             case "5":
-                getGreet();
+                Cli.getByName();
                 Progression.game();
                 break;
             case "6":
-                getGreet();
+                Cli.getByName();
                 Prime.game();
                 break;
             default:
                 // Handle the case where the input is not recognized
                 break;
         }
-    }
-
-    public static void getGreet() {
-        System.out.println("Welcome to the Brain Games!");
-        Cli.getByName();
     }
 }
