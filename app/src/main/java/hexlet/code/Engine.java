@@ -47,6 +47,37 @@ public class Engine {
             return new String[]{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)};
         }
     }
+    private static String[][] calcLogic2() {
+        final int firstNumber = (int) (Math.random() * 20);
+        final int secondNumber = (int) (Math.random() * 20);
+        final int randomOperator = (int) (Math.random() * 3);
+        int result;
+        String correct = "Correct!";
+        String congratulations = "Congratulations, " + getUserName() + "!";
+        String answer = "You answer: ";
+        String badEnding = "Let's try again, " + getUserName() + "!";
+
+
+        if (randomOperator == 1) {
+            result = firstNumber + secondNumber;
+
+            return new String[][] {{"Question: " + firstNumber + " + " + secondNumber, String.valueOf(result)},
+            {correct, congratulations, answer, badEnding}};
+
+        } else if (randomOperator == 2) {
+            result = firstNumber - secondNumber;
+
+            return new String[][] {{"Question: " + firstNumber + " - " + secondNumber, String.valueOf(result)},
+            {correct, congratulations, answer, badEnding}};
+
+        } else {
+
+            result = firstNumber * secondNumber;
+
+            return new String[][] {{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)},
+            {correct, congratulations, answer, badEnding}};
+        }
+    }
 
     //Геттеры
     public static String getCorrectTxt() {
@@ -69,5 +100,8 @@ public class Engine {
     }
     public static String[] getCalcLogic() {
         return calcLogic();
+    }
+    public static String[][] getCalcLogic2() {
+        return  calcLogic2();
     }
 }
