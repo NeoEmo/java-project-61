@@ -24,6 +24,31 @@ public class Engine {
         return index;
     }
 
+    private static int[] evenLogic() {
+        int randomNumber = (int) (Math.random() * 100);
+        int evenOrNo = randomNumber % 2;
+        return new int[]{randomNumber, evenOrNo};
+    }
+
+    private static String[] calcLogic() {
+        final int firstNumber = (int) (Math.random() * 20);
+        final int secondNumber = (int) (Math.random() * 20);
+        char[] operations = {'+', '-', '*'};
+        final int randomOperator = (int) (Math.random() * 3);
+        int result;
+
+        if (operations[randomOperator] == '+') {
+            result = firstNumber + secondNumber;
+            return new String[]{"Question: " + firstNumber + " + " + secondNumber, String.valueOf(result)};
+        } else if (operations[randomOperator] == '-') {
+            result = firstNumber - secondNumber;
+            return new String[]{"Question: " + firstNumber + " - " + secondNumber, String.valueOf(result)};
+        } else {
+            result = firstNumber * secondNumber;
+            return new String[]{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)};
+        }
+    }
+
     //Геттеры
     public static String getCorrectTxt() {
         return correctTxt();
@@ -37,7 +62,11 @@ public class Engine {
     public static String getBadEnding() {
         return badEnding();
     }
-    public static int getEndIndex() {
-        return  endIndex();
-    }
+    public static int getEndIndex() { return  endIndex(); }
+    public static int[] getEvenLogic() {
+            return evenLogic();
+        }
+    public static String[] getCalcLogic() {
+            return calcLogic();
+        }
 }

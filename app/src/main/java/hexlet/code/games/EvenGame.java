@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.GameLogic;
 
 import java.util.Scanner;
 
@@ -10,12 +9,13 @@ public class EvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int index = 0;
         while (index < Engine.getEndIndex()) {
-            System.out.println("Question: " + GameLogic.getEvenLogic()[0]);
+            int number = Engine.getEvenLogic()[0];
+            System.out.println("Question: " + number);
             Scanner correctQuestion = new Scanner(System.in);
             System.out.print(Engine.getAnswerTxt());
             String yesOrNo = correctQuestion.nextLine();
-            if ((yesOrNo.equals("yes") && GameLogic.getEvenLogic()[0] % 2 == 0)
-                || (yesOrNo.equals("no") && GameLogic.getEvenLogic()[0] % 2 == 1)) {
+            if ((yesOrNo.equals("yes") && number % 2 == 0)
+                || (yesOrNo.equals("no") && number % 2 == 1)) {
                 index++;
                 System.out.println(Engine.getCorrectTxt());
                 if (index == Engine.getEndIndex()) {
@@ -23,13 +23,12 @@ public class EvenGame {
                 }
             } else {
                 index = Engine.getEndIndex();
-                if (yesOrNo.equals("yes") && GameLogic.getEvenLogic()[0] % 2 == 1) {
+                if (yesOrNo.equals("yes") && number % 2 == 1) {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                } else {
+                } else
                     System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                }
                 System.out.println(Engine.getBadEnding());
+                }
             }
         }
     }
-}

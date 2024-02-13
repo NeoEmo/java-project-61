@@ -9,24 +9,9 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         int index = 0;
         while (index < Engine.getEndIndex()) {
-            //Создание рандомных значений до 20-ти и рандомного оператора
-            final int firstNumber = (int) (Math.random() * 20);
-            final int secondNumber = (int) (Math.random() * 20);
-            char[] operations = {'+', '-', '*'};
-            final int randomOperator = (int) (Math.random() * 3);
-            int result;
-
-            //Логика определения результата
-            if (operations[randomOperator] == '+') {
-                result = firstNumber + secondNumber;
-            } else if (operations[randomOperator] == '-') {
-                result = firstNumber - secondNumber;
-            } else {
-                result = firstNumber * secondNumber;
-            }
-
-            //Сама программа
-            System.out.println("Question: " + firstNumber + " " + operations[randomOperator] + " " + secondNumber);
+            int result = Integer.parseInt(Engine.getCalcLogic()[1]);
+            String match = Engine.getCalcLogic()[0];
+            System.out.println(match);
             Scanner correctQuestion = new Scanner(System.in);
             System.out.print(Engine.getAnswerTxt());
             int answerTheQuestion = correctQuestion.nextInt();
