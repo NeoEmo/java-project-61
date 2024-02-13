@@ -33,14 +33,13 @@ public class Engine {
     private static String[] calcLogic() {
         final int firstNumber = (int) (Math.random() * 20);
         final int secondNumber = (int) (Math.random() * 20);
-        char[] operations = {'+', '-', '*'};
         final int randomOperator = (int) (Math.random() * 3);
         int result;
 
-        if (operations[randomOperator] == '+') {
+        if (randomOperator == 1) {
             result = firstNumber + secondNumber;
             return new String[]{"Question: " + firstNumber + " + " + secondNumber, String.valueOf(result)};
-        } else if (operations[randomOperator] == '-') {
+        } else if (randomOperator == 2) {
             result = firstNumber - secondNumber;
             return new String[]{"Question: " + firstNumber + " - " + secondNumber, String.valueOf(result)};
         } else {

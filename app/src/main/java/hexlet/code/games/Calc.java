@@ -9,9 +9,9 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         int index = 0;
         while (index < Engine.getEndIndex()) {
-            int result = Integer.parseInt(Engine.getCalcLogic()[1]);
-            String match = Engine.getCalcLogic()[0];
-            System.out.println(match);
+            String[] match = Engine.getCalcLogic();
+            int result = Integer.parseInt(match[1]);
+            System.out.println(match[0]);
             Scanner correctQuestion = new Scanner(System.in);
             System.out.print(Engine.getAnswerTxt());
             int answerTheQuestion = correctQuestion.nextInt();
