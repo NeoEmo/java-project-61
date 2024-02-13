@@ -27,7 +27,7 @@ public class EvenGame {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 } else
                     System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println(Engine.getBadEnding());
+                    System.out.println(Engine.getBadEnding());
                 }
             }
         }

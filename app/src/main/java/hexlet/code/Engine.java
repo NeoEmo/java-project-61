@@ -25,7 +25,7 @@ public class Engine {
     }
 
     private static int[] evenLogic() {
-        int randomNumber = (int) (Math.random() * 100);
+        final int randomNumber = (int) (Math.random() * 100);
         int evenOrNo = randomNumber % 2;
         return new int[]{randomNumber, evenOrNo};
     }
@@ -61,11 +61,13 @@ public class Engine {
     public static String getBadEnding() {
         return badEnding();
     }
-    public static int getEndIndex() { return  endIndex(); }
+    public static int getEndIndex() {
+        return  endIndex();
+    }
     public static int[] getEvenLogic() {
-            return evenLogic();
-        }
+        return evenLogic();
+    }
     public static String[] getCalcLogic() {
-            return calcLogic();
-        }
+        return calcLogic();
+    }
 }
