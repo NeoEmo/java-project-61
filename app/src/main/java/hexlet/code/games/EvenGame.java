@@ -25,10 +25,11 @@ public class EvenGame {
                 index = Engine.getEndIndex();
                 if (yesOrNo.equals("yes") && number % 2 == 1) {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                } else
+                } else {
                     System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println(Engine.getBadEnding());
                 }
+                System.out.println(Engine.getBadEnding());
             }
         }
     }
+}
