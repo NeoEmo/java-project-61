@@ -5,9 +5,30 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
+    private final static String RULE = "What is the result of the expression?";
     public static void game() {
-        System.out.println("What is the result of the expression?");
-        int index = 0;
+        System.out.println(RULE);
+        for (var i = 0; i < Engine.getEndIndex(); i++) {
+            String[][] round = Engine.getCalcLogic2();
+            int result = Integer.parseInt(round[0][1]);
+            System.out.println(round[0][0]);
+            Scanner correctQuestion = new Scanner(System.in);
+            System.out.print(round[1][2]);
+            int answerTheQuestion = correctQuestion.nextInt();
+            if (answerTheQuestion == result) {
+                System.out.println(round[1][0]);
+                if (i == Engine.getEndIndex() - 1) {
+                    System.out.println(round[1][1]);
+                }
+            } else {
+                i = Engine.getEndIndex();
+                System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
+                System.out.println("'" + result + "'");
+                System.out.println(round[1][3]);
+            }
+        }
+
+        /*int index = 0;
         while (index < Engine.getEndIndex()) {
             String[][] match = Engine.getCalcLogic2();
             int result = Integer.parseInt(match[0][1]);
@@ -27,6 +48,6 @@ public class Calc {
                 System.out.println("'" + result + "'");
                 System.out.println(match[1][3]);
             }
-        }
+        }*/
     }
 }
