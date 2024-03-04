@@ -32,23 +32,18 @@ public class App {
                 Cli.getByName();
                 break;
             case "2":
-                Cli.getByName();
                 EvenGame.game();
                 break;
             case "3":
-                Cli.getByName();
                 Calc.game();
                 break;
             case "4":
-                Cli.getByName();
                 GCD.game();
                 break;
             case "5":
-                Cli.getByName();
                 Progression.game();
                 break;
             case "6":
-                Cli.getByName();
                 Prime.game();
                 break;
             default:

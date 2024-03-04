@@ -30,24 +30,25 @@ public class Engine {
         return new int[]{randomNumber, evenOrNo};
     }
 
-    private static String[] calcLogic() {
-        final int firstNumber = (int) (Math.random() * 20);
-        final int secondNumber = (int) (Math.random() * 20);
-        final int randomOperator = (int) (Math.random() * 3);
-        int result;
-
-        if (randomOperator == 1) {
-            result = firstNumber + secondNumber;
-            return new String[]{"Question: " + firstNumber + " + " + secondNumber, String.valueOf(result)};
-        } else if (randomOperator == 2) {
-            result = firstNumber - secondNumber;
-            return new String[]{"Question: " + firstNumber + " - " + secondNumber, String.valueOf(result)};
-        } else {
-            result = firstNumber * secondNumber;
-            return new String[]{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)};
-        }
-    }
+//    private static String[] calcLogic() {
+//        final int firstNumber = (int) (Math.random() * 20);
+//        final int secondNumber = (int) (Math.random() * 20);
+//        final int randomOperator = (int) (Math.random() * 3);
+//        int result;
+//
+//        if (randomOperator == 1) {
+//            result = firstNumber + secondNumber;
+//            return new String[]{"Question: " + firstNumber + " + " + secondNumber, String.valueOf(result)};
+//        } else if (randomOperator == 2) {
+//            result = firstNumber - secondNumber;
+//            return new String[]{"Question: " + firstNumber + " - " + secondNumber, String.valueOf(result)};
+//        } else {
+//            result = firstNumber * secondNumber;
+//            return new String[]{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)};
+//        }
+//    }
     private static String[][] calcLogic2() {
+        Cli.getByName();
         final int firstNumber = (int) (Math.random() * 20);
         final int secondNumber = (int) (Math.random() * 20);
         final int randomOperator = (int) (Math.random() * 3);
@@ -98,9 +99,9 @@ public class Engine {
     public static int[] getEvenLogic() {
         return evenLogic();
     }
-    public static String[] getCalcLogic() {
-        return calcLogic();
-    }
+//    public static String[] getCalcLogic() {
+//        return calcLogic();
+//    }
     public static String[][] getCalcLogic2() {
         return  calcLogic2();
     }
