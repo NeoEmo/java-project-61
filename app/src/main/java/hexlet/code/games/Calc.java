@@ -5,10 +5,9 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
-    private final static String RULE = "What is the result of the expression?";
-    private final static int MAX_ROUNDS = Integer.parseInt(Engine.getCalcLogic2()[1][4]);
+    public final static String RULE = "What is the result of the expression?";
+    private final static int MAX_ROUNDS = 3;
     public static void game() {
-        System.out.println(RULE);
         for (var i = 0; i < MAX_ROUNDS; i++) {
             String[][] round = Engine.getCalcLogic2();
             int result = Integer.parseInt(round[0][1]);

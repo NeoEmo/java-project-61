@@ -1,7 +1,7 @@
 package hexlet.code;
 
 
-import static hexlet.code.Cli.getUserName;
+import hexlet.code.games.Calc;
 
 public class Engine {
     static String correctTxt() {
@@ -9,7 +9,7 @@ public class Engine {
     }
 
     static String goodEnding() {
-        return "Congratulations, " + getUserName() + "!";
+        return "Congratulations, " + Cli.userName + "!";
     }
 
     static String answerTxt() {
@@ -17,7 +17,7 @@ public class Engine {
     }
 
     static String badEnding() {
-        return "Let's try again, " + getUserName() + "!";
+        return "Let's try again, " + Cli.userName + "!";
     }
 
     static int endIndex() {
@@ -48,16 +48,23 @@ public class Engine {
 //            return new String[]{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)};
 //        }
 //    }
+    static int checkGreet = 0;
+    static final int greetLocker = 1;
 private static String[][] calcLogic2() {
-    final String userName = Cli.getUserName();
+    if (checkGreet < greetLocker) {
+        Cli.getUserName();
+        checkGreet = 1;
+        System.out.println(Calc.RULE);
+    }
+
     final int firstNumber = (int) (Math.random() * 20);
     final int secondNumber = (int) (Math.random() * 20);
     final int randomOperator = (int) (Math.random() * 3);
     int result;
     String correct = "Correct!";
-    String congratulations = "Congratulations, " + userName + "!";
+    String congratulations = "Congratulations, " + Cli.userName + "!";
     String answer = "You answer: ";
-    String badEnding = "Let's try again, " + userName + "!";
+    String badEnding = "Let's try again, " + Cli.userName + "!";
     final int index = 3;
 
     if (randomOperator == 1) {
