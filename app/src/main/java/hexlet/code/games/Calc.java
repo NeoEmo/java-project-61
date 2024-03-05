@@ -6,9 +6,10 @@ import java.util.Scanner;
 
 public class Calc {
     private final static String RULE = "What is the result of the expression?";
+    private final static int MAX_ROUNDS = Integer.parseInt(Engine.getCalcLogic2()[1][4]);
     public static void game() {
         System.out.println(RULE);
-        for (var i = 0; i < Engine.getEndIndex(); i++) {
+        for (var i = 0; i < MAX_ROUNDS; i++) {
             String[][] round = Engine.getCalcLogic2();
             int result = Integer.parseInt(round[0][1]);
             System.out.println(round[0][0]);
@@ -17,11 +18,12 @@ public class Calc {
             int answerTheQuestion = correctQuestion.nextInt();
             if (answerTheQuestion == result) {
                 System.out.println(round[1][0]);
-                if (i == Engine.getEndIndex() - 1) {
+                // Колдун ******
+                if (i == MAX_ROUNDS - 1) {
                     System.out.println(round[1][1]);
                 }
             } else {
-                i = Engine.getEndIndex();
+                i = MAX_ROUNDS;
                 System.out.print("'" + answerTheQuestion + "'" + " is wrong answer ;(. Correct answer was ");
                 System.out.println("'" + result + "'");
                 System.out.println(round[1][3]);

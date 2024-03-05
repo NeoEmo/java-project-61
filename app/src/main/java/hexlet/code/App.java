@@ -29,7 +29,7 @@ public class App {
         System.out.println(gameNum);
         switch (gameNum) {
             case "1":
-                Cli.getByName();
+                Cli.getUserName();
                 break;
             case "2":
                 EvenGame.game();
