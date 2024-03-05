@@ -5,24 +5,26 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class EvenGame {
+    private final static int MAX_ROUNDS = 3;
+    public final static String RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static int ROUND = 0;
     public static void game() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int index = 0;
-        while (index < Engine.getEndIndex()) {
-            int number = Engine.getEvenLogic()[0];
-            System.out.println("Question: " + number);
+        while (ROUND < MAX_ROUNDS) {
+            String[][] round = Engine.getEvenLogic();
+            int number = Integer.parseInt(round[0][0]);
+            System.out.println("Question: " + round[0][0]);
             Scanner correctQuestion = new Scanner(System.in);
-            System.out.print(Engine.getAnswerTxt());
+            System.out.print(round[1][2]);
             String yesOrNo = correctQuestion.nextLine();
             if ((yesOrNo.equals("yes") && number % 2 == 0)
                 || (yesOrNo.equals("no") && number % 2 == 1)) {
-                index++;
+                ROUND++;
                 System.out.println(Engine.getCorrectTxt());
-                if (index == Engine.getEndIndex()) {
+                if (ROUND == MAX_ROUNDS) {
                     System.out.println(Engine.getGoodEnding());
                 }
             } else {
-                index = Engine.getEndIndex();
+                ROUND = MAX_ROUNDS;
                 if (yesOrNo.equals("yes") && number % 2 == 1) {
                     System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 } else {

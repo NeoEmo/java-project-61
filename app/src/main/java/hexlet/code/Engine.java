@@ -2,8 +2,11 @@ package hexlet.code;
 
 
 import hexlet.code.games.Calc;
+import hexlet.code.games.EvenGame;
 
 public class Engine {
+    static int checkGreet = 0;
+    static final int greetLocker = 1;
     static String correctTxt() {
         return "Correct!";
     }
@@ -25,10 +28,20 @@ public class Engine {
         return index;
     }
 
-    private static int[] evenLogic() {
+    private static String[][] evenLogic() {
+        if (checkGreet < greetLocker) {
+            Cli.getUserName();
+            checkGreet = 1;
+            System.out.println(EvenGame.RULE);
+        }
         final int randomNumber = (int) (Math.random() * 100);
         int evenOrNo = randomNumber % 2;
-        return new int[]{randomNumber, evenOrNo};
+        String correct = "Correct!";
+        String congratulations = "Congratulations, " + Cli.userName + "!";
+        String answer = "You answer: ";
+        String badEnding = "Let's try again, " + Cli.userName + "!";
+        return new String[][]{{String.valueOf(randomNumber), String.valueOf(evenOrNo)},
+                {correct, congratulations, answer, badEnding}};
     }
 
 //    private static String[] calcLogic() {
@@ -48,8 +61,6 @@ public class Engine {
 //            return new String[]{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)};
 //        }
 //    }
-    static int checkGreet = 0;
-    static final int greetLocker = 1;
 private static String[][] calcLogic2() {
     if (checkGreet < greetLocker) {
         Cli.getUserName();
@@ -65,25 +76,24 @@ private static String[][] calcLogic2() {
     String congratulations = "Congratulations, " + Cli.userName + "!";
     String answer = "You answer: ";
     String badEnding = "Let's try again, " + Cli.userName + "!";
-    final int index = 3;
 
     if (randomOperator == 1) {
         result = firstNumber + secondNumber;
 
         return new String[][] {{"Question: " + firstNumber + " + " + secondNumber, String.valueOf(result)},
-                {correct, congratulations, answer, badEnding, String.valueOf(index)}};
+                {correct, congratulations, answer, badEnding}};
 
     } else if (randomOperator == 2) {
         result = firstNumber - secondNumber;
 
         return new String[][] {{"Question: " + firstNumber + " - " + secondNumber, String.valueOf(result)},
-                {correct, congratulations, answer, badEnding, String.valueOf(index)}};
+                {correct, congratulations, answer, badEnding}};
 
     } else {
         result = firstNumber * secondNumber;
 
         return new String[][] {{"Question: " + firstNumber + " * " + secondNumber, String.valueOf(result)},
-                {correct, congratulations, answer, badEnding, String.valueOf(index)}};
+                {correct, congratulations, answer, badEnding}};
     }
 }
 
@@ -104,7 +114,7 @@ private static String[][] calcLogic2() {
     public static int getEndIndex() {
         return  endIndex();
     }
-    public static int[] getEvenLogic() {
+    public static String[][] getEvenLogic() {
         return evenLogic();
     }
 //    public static String[] getCalcLogic() {
