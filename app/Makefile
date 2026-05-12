@@ -8,3 +8,6 @@ windows-run-dist:
 
 setup:
 	chmod +x gradlew && ./gradlew clean install
+
+hello:
+	echo "hello"
