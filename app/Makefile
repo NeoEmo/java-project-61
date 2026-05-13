@@ -2,12 +2,12 @@
 run-dist:
 	./build/install/app/bin/app
 
+build:
+	./gradlew build || true
+
 # Команды на windows
 windows-run-dist:
 	.\build\install\app\bin\app
 
-setup:
-	chmod +x gradlew
-
-hello:
-	echo "hello"
+windows-build:
+	.\gradlew build || true
