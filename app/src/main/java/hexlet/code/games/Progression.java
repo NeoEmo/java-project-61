@@ -9,26 +9,32 @@ public final class Progression {
         String rules = "What number is missing in the progression?";
         String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int randomProgression = Utils.generateNumber(Engine.MIN_NUMBER, Engine.MAX_NUMBER);
-            int missingNumber = Utils.generateNumber(Engine.MIN_NUMBER, Engine.LENGTH_PROGRESSION);
-            int firstNumberOfProgression = Utils.generateNumber(Engine.ZERO_NUMBER, Engine.MIN_NUMBER);
-            int temp = firstNumberOfProgression;
-            String rightAnswer = "";
-            String[] progression = new String[Engine.LENGTH_PROGRESSION];
-            progression[0] = String.valueOf(firstNumberOfProgression);
-            for (int j = 0; j < progression.length; j++) {
-                if (missingNumber == j) {
-                    rightAnswer = String.valueOf(temp);
-                    progression[j] = "..";
-                } else {
-                    progression[j] = String.valueOf(temp);
-                }
-                temp += randomProgression;
-            }
-            rounds[i][0] = String.join(" ", progression);
-            rounds[i][1] = rightAnswer;
+            String[] round = generateRound();
+            rounds[i][0] = round[0];
+            rounds[i][1] = round[1];
         }
         Engine.run(rules, rounds, App.SCANNER);
+    }
+
+    private static String[] generateRound() {
+        int randomProgression = Utils.generateNumber(Engine.MIN_NUMBER, Engine.MAX_NUMBER);
+        int missingNumber = Utils.generateNumber(Engine.MIN_NUMBER, Engine.LENGTH_PROGRESSION);
+        int firstNumberOfProgression = Utils.generateNumber(Engine.ZERO_NUMBER, Engine.MIN_NUMBER);
+        int temp = firstNumberOfProgression;
+        String rightAnswer = "";
+        String[] progression = new String[Engine.LENGTH_PROGRESSION];
+        progression[0] = String.valueOf(firstNumberOfProgression);
+        for (int j = 0; j < progression.length; j++) {
+            if (missingNumber == j) {
+                rightAnswer = String.valueOf(temp);
+                progression[j] = "..";
+            } else  {
+                progression[j] = String.valueOf(temp);
+            }
+            temp += randomProgression;
+        }
+        String question = String.join(" ", progression);
+        return new String[] {question, rightAnswer};
     }
 
     private  Progression() { }
