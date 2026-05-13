@@ -6,6 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public final class Prime {
+    public static final int START_DIVISOR = 3;
+
     public static void play(Scanner scanner, Random random) {
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
@@ -33,7 +35,7 @@ public final class Prime {
             return false;
         }
 
-        for (int i = 3; i <= Math.sqrt(number); i += 2) {
+        for (int i = START_DIVISOR; i <= Math.sqrt(number); i += 2) {
             if (number % i == 0) {
                 return false;
             }
