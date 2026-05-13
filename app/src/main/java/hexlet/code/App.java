@@ -6,13 +6,11 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class App {
 
     public static final Scanner SCANNER = new Scanner(System.in);
-    public static final Random RANDOM = new Random();
     public static final int EXIT_SUCCESS = 0;
     public static final int CLI_GREET = 1;
     public static final int EVEN_GAME = 2;
@@ -35,6 +33,7 @@ public class App {
 
         System.out.print(menu);
         int userAnswer = SCANNER.nextInt();
+        Cli.greet();
         boolean isValid = false;
         SCANNER.nextLine();
         while (!isValid) {
@@ -45,33 +44,28 @@ public class App {
                 }
 
                 case CLI_GREET -> {
-                    Cli.greet(SCANNER);
+                    Cli.greet();
                     isValid = true;
                 }
 
                 case EVEN_GAME -> {
-                    Cli.greet(SCANNER);
-                    Even.play(SCANNER, RANDOM);
+                    Even.play();
                     isValid = true;
                 }
                 case CALC_GAME -> {
-                    Cli.greet(SCANNER);
-                    Calc.play(SCANNER, RANDOM);
+                    Calc.play();
                     isValid = true;
                 }
                 case GCD_GAME -> {
-                    Cli.greet(SCANNER);
-                    GCD.play(SCANNER, RANDOM);
+                    GCD.play();
                     isValid = true;
                 }
                 case PROGRESSION_GAME -> {
-                    Cli.greet(SCANNER);
-                    Progression.play(SCANNER, RANDOM);
+                    Progression.play();
                     isValid = true;
                 }
                 case PRIME_GAME -> {
-                    Cli.greet(SCANNER);
-                    Prime.play(SCANNER, RANDOM);
+                    Prime.play();
                     isValid = true;
                 }
                 default -> {

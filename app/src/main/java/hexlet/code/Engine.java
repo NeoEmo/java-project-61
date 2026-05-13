@@ -10,6 +10,7 @@ public final class Engine {
     public static final int LENGTH_PROGRESSION = 10;
     public static final int MIN_STEP = 1;
     public static final int MAX_STEP = 10;
+    public static final int ZERO_NUMBER = 0;
 
     public static void run(String rules, String[][] rounds, Scanner sc) {
         System.out.println(rules);
@@ -21,11 +22,19 @@ public final class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rounds[i][1] + "'.");
-                Cli.badAnswer();
+                Engine.badAnswer();
                 return;
             }
         }
-        Cli.congratulations();
+        Engine.congratulations();
+    }
+
+    public static void congratulations() {
+        System.out.println("Congratulations, " + Cli.userName + "!");
+    }
+
+    public static void badAnswer() {
+        System.out.println("Let's try again, " + Cli.userName + "!");
     }
 
     private Engine() { }
