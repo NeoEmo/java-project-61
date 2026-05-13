@@ -20,7 +20,6 @@ public class App {
     public static final int PRIME_GAME = 6;
 
     public static void main(String[] args) {
-        Cli.greet();
         String menu = """
                 Please enter the game number and press Enter.
                 1 - Greet
