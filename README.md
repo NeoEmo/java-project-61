@@ -6,6 +6,18 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=NeoEmo_java-project-61&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=NeoEmo_java-project-61)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=NeoEmo_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=NeoEmo_java-project-61)
 
+## Первый учебный проект hexlet
+
+**Проект ввиде Cli игр**
+
+Вот список всех игр:
+1. Even
+2. Calc
+3. GCD
+4. Progression
+5. Prime
+
+---
 
 Asciinema Even — https://asciinema.org/a/9qPwGyhAbs4xawEi
 
