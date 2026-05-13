@@ -20,6 +20,7 @@ public class App {
     public static final int PRIME_GAME = 6;
 
     public static void main(String[] args) {
+        Cli.greet();
         String menu = """
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -31,52 +32,27 @@ public class App {
                 0 - Exit
                 Your choice:\s""";
 
-        System.out.print(menu);
-        int userAnswer = SCANNER.nextInt();
-        Cli.greet();
-        boolean isValid = false;
-        SCANNER.nextLine();
-        while (!isValid) {
+        while (true) {
+            System.out.print(menu);
+            int userAnswer = SCANNER.nextInt();
+            SCANNER.nextLine();
             switch (userAnswer) {
                 case EXIT_SUCCESS -> {
+                    SCANNER.close();
                     System.exit(EXIT_SUCCESS);
-                    isValid = true;
                 }
-
                 case CLI_GREET -> {
                     Cli.greet();
-                    isValid = true;
                 }
-
-                case EVEN_GAME -> {
-                    Even.play();
-                    isValid = true;
-                }
-                case CALC_GAME -> {
-                    Calc.play();
-                    isValid = true;
-                }
-                case GCD_GAME -> {
-                    GCD.play();
-                    isValid = true;
-                }
-                case PROGRESSION_GAME -> {
-                    Progression.play();
-                    isValid = true;
-                }
-                case PRIME_GAME -> {
-                    Prime.play();
-                    isValid = true;
-                }
-                default -> {
-                    System.out.print(menu);
-                    userAnswer = SCANNER.nextInt();
-                    SCANNER.nextLine();
-                }
+                case EVEN_GAME -> Even.play();
+                case CALC_GAME -> Calc.play();
+                case GCD_GAME -> GCD.play();
+                case PROGRESSION_GAME -> Progression.play();
+                case PRIME_GAME -> Prime.play();
+                default -> System.out.println("Wrong choice. Try again.");
             }
         }
     }
-
     public static void closeScanner() {
         SCANNER.close();
     }
