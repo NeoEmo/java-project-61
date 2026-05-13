@@ -7,7 +7,7 @@ windows-run-dist:
 	.\build\install\app\bin\app
 
 setup:
-	chmod +x gradlew && ./gradlew clean install
+	chmod +x gradlew
 
 hello:
 	echo "hello"
