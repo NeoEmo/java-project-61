@@ -31,7 +31,6 @@ public class App {
                 0 - Exit
                 Your choice:\s""";
 
-        while (true) {
             System.out.print(menu);
             int userAnswer = SCANNER.nextInt();
             SCANNER.nextLine();
@@ -66,7 +65,6 @@ public class App {
                 }
                 default -> System.out.println("Wrong choice. Try again.");
             }
-        }
     }
     public static void closeScanner() {
         SCANNER.close();
