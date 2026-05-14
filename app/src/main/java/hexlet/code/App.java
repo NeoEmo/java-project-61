@@ -42,6 +42,7 @@ public class App {
                 }
                 case CLI_GREET -> {
                     Cli.greet();
+                    break;
                 }
                 case EVEN_GAME -> {
                     Even.play();
