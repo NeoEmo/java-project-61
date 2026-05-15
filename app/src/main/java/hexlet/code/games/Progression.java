@@ -1,40 +1,43 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public final class Progression {
+    public static final int MIN_START = 0;
+    public static final int MAX_START = 10;
+    public static final int MAX_STEP = 50;
+    public static final int LENGTH_PROGRESSION = 10;
+
     public static void play() {
         String rules = "What number is missing in the progression?";
         String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            String[] round = generateRound();
+            int start = Utils.generateNumber(MIN_START, MAX_START);
+            int step = Utils.generateNumber(MIN_START, MAX_STEP);
+            int lengthProgression = Utils.generateNumber(MIN_START, LENGTH_PROGRESSION);
+            String[] round = generateRound(start, step, lengthProgression);
             rounds[i][0] = round[0];
             rounds[i][1] = round[1];
         }
-        Engine.run(rules, rounds, App.SCANNER);
+        Engine.run(rules, rounds);
     }
 
-    private static String[] generateRound() {
-        int randomProgression = Utils.generateNumber(Engine.MIN_NUMBER, Engine.MAX_NUMBER);
-        int missingNumber = Utils.generateNumber(Engine.MIN_NUMBER, Engine.LENGTH_PROGRESSION);
-        int firstNumberOfProgression = Utils.generateNumber(Engine.ZERO_NUMBER, Engine.MIN_NUMBER);
-        int temp = firstNumberOfProgression;
+    private static String[] generateRound(int  start, int step, int lengthProgression) {
+        String[] progression = new String[lengthProgression];
+        int missingPosition = Utils.generateNumber(MIN_START, MAX_START);
+        int current =start;
         String rightAnswer = "";
-        String[] progression = new String[Engine.LENGTH_PROGRESSION];
-        progression[0] = String.valueOf(firstNumberOfProgression);
-        for (int j = 0; j < progression.length; j++) {
-            if (missingNumber == j) {
-                rightAnswer = String.valueOf(temp);
-                progression[j] = "..";
-            } else  {
-                progression[j] = String.valueOf(temp);
+        for(int i = 0; i < lengthProgression; i++) {
+            if(i == missingPosition) {
+                rightAnswer = String.valueOf(current);
+                progression[i] = "..";
+            } else {
+                progression[i] = String.valueOf(current);
             }
-            temp += randomProgression;
+            current += step;
         }
-        String question = String.join(" ", progression);
-        return new String[] {question, rightAnswer};
+        return progression;
     }
 
     private  Progression() { }

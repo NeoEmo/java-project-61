@@ -63,7 +63,7 @@ public class App {
                     Prime.play();
                     break;
                 }
-                default -> System.out.println("Wrong choice. Try again.");
+                default -> System.out.println("Wrong choice: " + userAnswer + ". Try again.");
             }
     }
     public static void closeScanner() {

@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public final class Cli {
     public static String userName;
 
@@ -9,9 +11,9 @@ public final class Cli {
         String greet = """
                 Welcome to the Brain Games!
                 May I have your name?\s""";
-
+        Scanner input = new Scanner(System.in);
         System.out.print(greet);
-        String name = App.SCANNER.nextLine();
+        String name = input.nextLine();
         userName = name;
         System.out.println("Hello, " + name + "!");
     }
