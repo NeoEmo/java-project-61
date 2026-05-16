@@ -21,6 +21,7 @@ public final class Engine {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rounds[i][1] + "'.");
                 System.out.println("Let's try again, " + Cli.userName + "!");
                 sc.close();
+                break;
             }
         }
         if(count == ROUNDS_COUNT) {
