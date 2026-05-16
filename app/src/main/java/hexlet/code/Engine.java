@@ -19,13 +19,13 @@ public final class Engine {
                 count++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rounds[i][1] + "'.");
-                System.out.println("Let's try again, " + Cli.userName + "!");
+                System.out.println("Let's try again, " + Cli.getUserName() + "!");
                 sc.close();
                 break;
             }
         }
         if (count == ROUNDS_COUNT) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+            System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
         sc.close();
     }
