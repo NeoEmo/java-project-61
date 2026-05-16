@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Arrays;
 
 public final class Progression {
     public static final int MIN_START = 0;
@@ -29,10 +28,10 @@ public final class Progression {
     private static String[] generateRound(int  start, int step, int lengthProgression) {
         String[] progression = new String[lengthProgression];
         int missingPosition = Utils.generateNumber(MIN_START, lengthProgression - 1);
-        int current =start;
+        int current = start;
         String rightAnswer = "";
-        for(int i = 0; i < lengthProgression; i++) {
-            if(i == missingPosition) {
+        for (int i = 0; i < lengthProgression; i++) {
+            if (i == missingPosition) {
                 rightAnswer = String.valueOf(current);
                 progression[i] = "..";
             } else {

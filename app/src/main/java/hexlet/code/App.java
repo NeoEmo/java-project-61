@@ -31,40 +31,40 @@ public class App {
                 0 - Exit
                 Your choice:\s""";
 
-            System.out.print(menu);
-            int userAnswer = SCANNER.nextInt();
-            SCANNER.nextLine();
-            switch (userAnswer) {
-                case EXIT_SUCCESS -> {
-                    SCANNER.close();
-                    System.exit(EXIT_SUCCESS);
-                }
-                case CLI_GREET -> {
-                    Cli.greet();
-                    break;
-                }
-                case EVEN_GAME -> {
-                    Even.play();
-                    break;
-                }
-                case CALC_GAME -> {
-                    Calc.play();
-                    break;
-                }
-                case GCD_GAME -> {
-                    GCD.play();
-                    break;
-                }
-                case PROGRESSION_GAME -> {
-                    Progression.play();
-                    break;
-                }
-                case PRIME_GAME -> {
-                    Prime.play();
-                    break;
-                }
-                default -> System.out.println("Wrong choice: " + userAnswer + ". Try again.");
+        System.out.print(menu);
+        int userAnswer = SCANNER.nextInt();
+        SCANNER.nextLine();
+        switch (userAnswer) {
+            case EXIT_SUCCESS -> {
+                SCANNER.close();
+                System.exit(EXIT_SUCCESS);
             }
+            case CLI_GREET -> {
+                Cli.greet();
+                break;
+            }
+            case EVEN_GAME -> {
+                Even.play();
+                break;
+            }
+            case CALC_GAME -> {
+                Calc.play();
+                break;
+            }
+            case GCD_GAME -> {
+                GCD.play();
+                break;
+            }
+            case PROGRESSION_GAME -> {
+                Progression.play();
+                break;
+            }
+            case PRIME_GAME -> {
+                Prime.play();
+                break;
+            }
+            default -> System.out.println("Wrong choice: " + userAnswer + ". Try again.");
+        }
     }
     public static void closeScanner() {
         SCANNER.close();

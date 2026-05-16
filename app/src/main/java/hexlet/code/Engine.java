@@ -24,7 +24,7 @@ public final class Engine {
                 break;
             }
         }
-        if(count == ROUNDS_COUNT) {
+        if (count == ROUNDS_COUNT) {
             System.out.println("Congratulations, " + Cli.userName + "!");
         }
         sc.close();
