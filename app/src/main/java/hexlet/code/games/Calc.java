@@ -16,7 +16,7 @@ public final class Calc {
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int firstNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
             int secondNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-            int numAction = Utils.generateNumber(ZERO_NUMBER, actions.length);
+            int numAction = Utils.generateNumber(ZERO_NUMBER, actions.length - 1);
             String action = actions[numAction];
             int rightAnswer = switch (action) {
                 case "+" -> firstNumber + secondNumber;
@@ -30,7 +30,7 @@ public final class Calc {
         Engine.run(rules, rounds);
     }
 
-    
+
 
     private Calc() { }
 }
