@@ -4,11 +4,19 @@ import java.util.Scanner;
 
 public final class Engine {
     public static final int ROUNDS_COUNT = 3;
+    public static String userName;
 
     public static void run(String rules, String[][] rounds) {
-        Cli.greet();
-        System.out.println(rules);
+        String greet = """
+                Welcome to the Brain Games!
+                May I have your name?\s""";
         Scanner sc = new Scanner(System.in);
+        System.out.print(greet);
+        String name = sc.nextLine();
+        sc.nextLine();
+        userName = name;
+        System.out.println("Hello, " + name + "!");
+        System.out.println(rules);
         int count = 0;
         for (int i = 0; i < ROUNDS_COUNT; i++) {
             System.out.println("Question: " + rounds[i][0]);
@@ -19,13 +27,13 @@ public final class Engine {
                 count++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rounds[i][1] + "'.");
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 sc.close();
                 break;
             }
         }
         if (count == ROUNDS_COUNT) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
+            System.out.println("Congratulations, " + userName + "!");
         }
         sc.close();
     }
