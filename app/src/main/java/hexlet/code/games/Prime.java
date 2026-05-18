@@ -29,7 +29,7 @@ public final class Prime {
             return false;
         }
 
-        int startDivisor = 3;
+        final int startDivisor = 3;
         for (int divisor = startDivisor; divisor <= Math.sqrt(number); divisor += 2) {
             if (number % divisor == 0) {
                 return false;
