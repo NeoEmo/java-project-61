@@ -41,27 +41,21 @@ public class App {
             }
             case CLI_GREET -> {
                 Cli.greet();
-                break;
             }
             case EVEN_GAME -> {
                 Even.play();
-                break;
             }
             case CALC_GAME -> {
                 Calc.play();
-                break;
             }
             case GCD_GAME -> {
                 GCD.play();
-                break;
             }
             case PROGRESSION_GAME -> {
                 Progression.play();
-                break;
             }
             case PRIME_GAME -> {
                 Prime.play();
-                break;
             }
             default -> System.out.println("Wrong choice: " + userAnswer + ". Try again.");
         }
