@@ -18,19 +18,27 @@ public final class Calc {
             int secondNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
             int numAction = Utils.generateNumber(ZERO_NUMBER, actions.length - 1);
             String action = actions[numAction];
-            int rightAnswer = switch (action) {
-                case "+" -> firstNumber + secondNumber;
-                case "-" -> firstNumber - secondNumber;
-                case "*" -> firstNumber * secondNumber;
-                default -> throw new IllegalStateException("Unexpected value: " + action);
-            };
+            int rightAnswer = calculate(firstNumber, secondNumber, action);
             rounds[i][0] = firstNumber + " " + action + " " + secondNumber;
             rounds[i][1] = String.valueOf(rightAnswer);
         }
         Engine.run(rules, rounds);
     }
 
-
+    private static int calculate(int firstNumber, int secondNumber, String action) {
+        switch (action) {
+            case "+" -> {
+                return firstNumber + secondNumber;
+            }
+            case "-" -> {
+                return firstNumber - secondNumber;
+            }
+            case "*" -> {
+                return firstNumber * secondNumber;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + action);
+        }
+    }
 
     private Calc() { }
 }

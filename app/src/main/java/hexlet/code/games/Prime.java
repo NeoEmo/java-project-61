@@ -4,7 +4,6 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public final class Prime {
-    public static final int START_DIVISOR = 3;
     public static final int MAX_NUMBER = 100;
     public static final int MIN_NUMBER = 10;
 
@@ -13,7 +12,7 @@ public final class Prime {
         String[][] rounds = new String[Engine.ROUNDS_COUNT][2];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-            boolean isPrime = calculatePrime(number);
+            boolean isPrime = isPrime(number);
             String rightAnswer = isPrime ? "yes" : "no";
             rounds[i][0] = String.valueOf(number);
             rounds[i][1] = rightAnswer;
@@ -21,7 +20,7 @@ public final class Prime {
         Engine.run(rules, rounds);
     }
 
-    public static boolean calculatePrime(int number) {
+    public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         } else if (number == 2) {
@@ -30,7 +29,8 @@ public final class Prime {
             return false;
         }
 
-        for (int i = START_DIVISOR; i <= Math.sqrt(number); i += 2) {
+        int divisor = 3;
+        for (int i = divisor; i <= Math.sqrt(number); i += 2) {
             if (number % i == 0) {
                 return false;
             }
