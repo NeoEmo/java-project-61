@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public final class Engine {
     public static final int ROUNDS_COUNT = 3;
-    public static String userName;
+    private static String userName;
 
     public static void run(String rules, String[][] rounds) {
         String greet = """
@@ -35,6 +35,10 @@ public final class Engine {
             System.out.println("Congratulations, " + userName + "!");
         }
         sc.close();
+    }
+
+    public String getUserName() {
+        return userName;
     }
 
     private Engine() { }
