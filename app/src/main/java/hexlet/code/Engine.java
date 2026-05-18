@@ -13,7 +13,6 @@ public final class Engine {
         Scanner sc = new Scanner(System.in);
         System.out.print(greet);
         String name = sc.nextLine();
-        sc.nextLine();
         userName = name;
         System.out.println("Hello, " + name + "!");
         System.out.println(rules);
