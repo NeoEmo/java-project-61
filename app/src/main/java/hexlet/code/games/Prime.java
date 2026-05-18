@@ -29,9 +29,9 @@ public final class Prime {
             return false;
         }
 
-        int divisor = 3;
-        for (int i = divisor; i <= Math.sqrt(number); i += 2) {
-            if (number % i == 0) {
+
+        for (int divisor = 3; divisor <= Math.sqrt(number); divisor += 2) {
+            if (number % divisor == 0) {
                 return false;
             }
         }
