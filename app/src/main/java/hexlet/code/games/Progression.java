@@ -18,29 +18,30 @@ public final class Progression {
             int start = Utils.generateNumber(MIN_START, MAX_START);
             int step = Utils.generateNumber(MIN_START, MAX_STEP);
             int lengthProgression = Utils.generateNumber(MIN_LENGTH_PROGRESSION, LENGTH_PROGRESSION);
-            String[] round = generateRound(start, step, lengthProgression);
-            rounds[i][0] = round[0];
-            rounds[i][1] = round[1];
+            int[] progression = generateProgression(start, step, lengthProgression);
+            int missingPosition = Utils.generateNumber(MIN_START, lengthProgression - 1);
+            int rightAnswer = progression[missingPosition];
+            String question = formatQuestion(progression, missingPosition);
+            rounds[i][0] = question;
+            rounds[i][1] = String.valueOf(rightAnswer);
         }
         Engine.run(rules, rounds);
     }
 
-    private static String[] generateRound(int  start, int step, int lengthProgression) {
-        String[] progression = new String[lengthProgression];
-        int missingPosition = Utils.generateNumber(MIN_START, lengthProgression - 1);
-        int current = start;
-        String rightAnswer = "";
+    private static int[] generateProgression(int start, int step, int lengthProgression) {
+        int[] progression = new int[lengthProgression];
         for (int i = 0; i < lengthProgression; i++) {
-            if (i == missingPosition) {
-                rightAnswer = String.valueOf(current);
-                progression[i] = "..";
-            } else {
-                progression[i] = String.valueOf(current);
-            }
-            current += step;
+            progression[i] = start + i  * step;
         }
-        String question = String.join(" ", progression);
-        return new String[]{question, rightAnswer};
+        return progression;
+    }
+
+    private static String formatQuestion(int[] progression, int missingPosition) {
+        String[] parts = new String[progression.length];
+        for (int i = 0; i < progression.length; i++) {
+            parts[i] = (i == missingPosition) ? ".." : String.valueOf(progression[i]);
+        }
+        return String.join(" ", parts);
     }
 
     private  Progression() { }
